@@ -16,7 +16,22 @@ from matplotlib import pyplot as plt
 import matplotlib as mpl
 mpl.rcParams['figure.figsize'] = (10,10)
 
-def Get_Super_Pixel_STDs(variable,segments) : 
+def Month_Map(month_str) : 
+
+    """
+    Function to converty months as 3 letter strings to
+    corresponding int between 0 and 11.
+    month_str : str
+    """
+    
+    Month_Dict = { "Jan" : 0,  "Feb" : 1, "Mar" : 2, "Apr" : 3 , "May" : 4, "Jun" : 5, "Jul" : 6 , "Aug" : 7 , "Sep" : 8, "Oct" : 9 , "Nov" : 10 , "Dec" : 11}
+    
+    return Month_Dict[month_str]
+
+
+
+
+def Get_Super_Pixel_STDs(variable,segments,year,month,day,hour,forecast_period) : 
 
     """
     
@@ -49,7 +64,7 @@ def Get_Super_Pixel_STDs(variable,segments) :
         print("Pixel = " + str(PIXEL))
 
         for i in range(num_ensemble_members) : 
-            f = mogreps.download_data('mogreps-uk', mogreps.make_data_object_name('mogreps-uk',2013,2,1,3,i,3),data_folder=Path('.')  )
+            f = mogreps.download_data('mogreps-uk', mogreps.make_data_object_name('mogreps-uk',year,Month_Map(month),day,hour,i,forecast_period),data_folder=Path('.')  )
             data_set = netCDF4.Dataset(f)
             
             #Try except fudge to account for the fact that different arrays are at different depths:
@@ -100,7 +115,7 @@ def Put_into_segmentation_matrix(segments,STD_Vals) :
                 
 
 
-def Plot_on_Segments(Scalar_Field,Variable_Name,filename='plot') :
+def Plot_on_Segments(Scalar_Field,Variable_Name,year,month,day,hour,forecast_period,filename='plot') :
 
 	"""
 	Plot some field associated with the different segments.
@@ -109,7 +124,7 @@ def Plot_on_Segments(Scalar_Field,Variable_Name,filename='plot') :
 
 	#Load a single instance of the data set so that we can get the latitude and longitude coordinates:
 
-	f = mogreps.download_data('mogreps-uk', mogreps.make_data_object_name('mogreps-uk',2013,2,1,3,0,3),data_folder=Path('.')  )
+	f = mogreps.download_data('mogreps-uk', mogreps.make_data_object_name('mogreps-uk',year,Month_Map(month),day,hour,0,forecast_period),data_folder=Path('.')  )
 	data_set = netCDF4.Dataset(f)
 
 
@@ -126,7 +141,7 @@ def Plot_on_Segments(Scalar_Field,Variable_Name,filename='plot') :
 	colbar = fig.colorbar(pcm)
 	#ax.imshow(mark_boundaries(image, segments))
 	#colbar.set_label("VAR("  + str(variable_name) + ")")
-	plt.title(Variable_Name)
+	plt.title(Variable_Name + " " + str(year) + "_" + month + "_" + str(day) + "_" + str(hour) + "_forcast_period="+str(forecast_period) ) 
 	plt.savefig(filename, bbox_inches='tight' ) 
 	plt.show()
 
