@@ -2,3 +2,4 @@
 __pycache__
 scatter_test.py
 .ipynb_checkpoints
+*.py~
