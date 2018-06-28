@@ -7,12 +7,11 @@ import matplotlib.gridspec as gs
 #lists = np.random.rand(2,3,10)
 #var_names = ['pressure','temp','wind speed']
 
-def scatterplot(stats,var_names):
+def scatterplot(lists,var_names):
 
 	# lists = [mean or variance, flow property, segment number]
 
 	Nv, Np, Ns = np.shape(lists) # Nv = 2 (mean or variance), Np = no of flow properties, Ns = no of segments
-
 
 	varmax = np.zeros((2,Np))
 	varmin = np.zeros((2,Np))
