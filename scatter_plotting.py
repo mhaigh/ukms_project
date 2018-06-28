@@ -9,6 +9,10 @@ import matplotlib.gridspec as gs
 
 def scatterplot(lists,var_names):
 
+	"""
+	Function to create an array of scatter plots.
+	"""
+
 	# lists = [mean or variance, flow property, segment number]
 
 	Nv, Np, Ns = np.shape(lists) # Nv = 2 (mean or variance), Np = no of flow properties, Ns = no of segments
