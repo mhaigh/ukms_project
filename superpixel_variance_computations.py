@@ -4,6 +4,18 @@ Functions for analysing the ensemble variability in averages of properties acros
 
 """
 
+import numpy as np
+#import modules:
+import mogreps
+import netCDF4
+from pathlib import Path
+#(module for transforming coordinate systems)
+import cartopy.crs as ccrs
+
+from matplotlib import pyplot as plt
+import matplotlib as mpl
+mpl.rcParams['figure.figsize'] = (10,10)
+
 def Get_Super_Pixel_STDs(variable,segments) : 
 
     """
@@ -56,7 +68,7 @@ def Get_Super_Pixel_STDs(variable,segments) :
         STD_Vals.append(STD_for_this_pixel)
         Variance_Vals.append(Variance_for_this_pixel)
         
-    return STD_Vals ,Variance_Vals 
+    return STD_Vals , Variance_Vals 
 
 
 
