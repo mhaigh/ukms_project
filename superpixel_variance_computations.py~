@@ -54,6 +54,7 @@ def Get_Super_Pixel_STDs(variable,segments,year,month,day,hour,forecast_period) 
 
     STD_Vals = [ ]
     Variance_Vals = [ ]
+    CV_Vals = [ ] 
 
     for PIXEL in range(np.max(segments)):
 
@@ -82,8 +83,10 @@ def Get_Super_Pixel_STDs(variable,segments,year,month,day,hour,forecast_period) 
         STD_for_this_pixel = np.std(Averages_in_this_pixel)
         STD_Vals.append(STD_for_this_pixel)
         Variance_Vals.append(Variance_for_this_pixel)
+        CV_Vals.append(np.std(Averages_in_this_pixel)/np.mean(Averages_in_this_pixel) ) 
         
-    return STD_Vals , Variance_Vals 
+        
+    return STD_Vals , Variance_Vals ,CV_Vals
 
 
 def Put_into_segmentation_matrix(segments,STD_Vals) : 
@@ -115,7 +118,7 @@ def Put_into_segmentation_matrix(segments,STD_Vals) :
                 
 
 
-def Plot_on_Segments(Scalar_Field,Variable_Name,year,month,day,hour,forecast_period,filename='plot') :
+def Plot_on_Segments(Scalar_Field,Variable_Name,year,month,day,hour,forecast_period,num_cells,filename='plot') :
 
 	"""
 	Plot some field associated with the different segments.
@@ -141,8 +144,8 @@ def Plot_on_Segments(Scalar_Field,Variable_Name,year,month,day,hour,forecast_per
 	colbar = fig.colorbar(pcm)
 	#ax.imshow(mark_boundaries(image, segments))
 	#colbar.set_label("VAR("  + str(variable_name) + ")")
-	plt.title(Variable_Name + " " + str(year) + "_" + month + "_" + str(day) + "_" + str(hour)  ) 
-	plt.savefig(filename, bbox_inches='tight' ) 
+	plt.title(Variable_Name + " " + str(year) + "_" + month + "_" + str(day) + "_" + str(hour) + "_forcast_period="+str(forecast_period) ) 
+	plt.savefig(filename + "_" + str(year) + "_" + month + "_" + str(day) + "_h_" + str(hour) + "_fp_"+str(forecast_period) + "_cells_" + str(, bbox_inches='tight' ) 
 	plt.show()
 
 
