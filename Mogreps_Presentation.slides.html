@@ -11932,6 +11932,52 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Introduction-to-SLIC">Introduction to SLIC<a class="anchor-link" href="#Introduction-to-SLIC">&#182;</a></h1><p>We use SLIC (Simple Linear Iterative Clustering) to segment images.</p>
+<p><img src="images/mike_coarse.png" style="width: 1000px;"/></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="images/not_coarse.png"></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="images/not_coarse_1.png"></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="images/matt_not_coarse.png"></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="images/coarseest.png"></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Research-Question">Research Question<a class="anchor-link" href="#Research-Question">&#182;</a></h1><ul>
 <li>Q: how different are the different ensemble members in Mogreps?</li>
 <li>Q: Is there some degree of spatial correlation in this variability?</li>
@@ -11945,9 +11991,14 @@ a.anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Let $X$ be some variable we are interested in (e.g temperature,pressure).</p>
-<p>We divide the region into segments $K=1,...,N$ using the image segmentation algorithm.</p>
-<p>Let $&lt;X&gt;_K^p$ be the mean value of X in cell K for ensemble member $P$.</p>
-<p>Given $&lt;X&gt;_K^p$'s we can compute statistics of interest e.g <strong>mean</strong>,<strong>variance</strong></p>
+<ul>
+<li><p>We divide the region into segments $K=1,...,N$ using the image segmentation algorithm.</p>
+</li>
+<li><p>Let $&lt;X&gt;_K^p$ be the mean value of X in cell K for ensemble member $P$.</p>
+</li>
+<li><p>Given $&lt;X&gt;_K^p$'s we can compute statistics of interest e.g <strong>mean</strong>,<strong>variance</strong></p>
+</li>
+</ul>
 
 </div>
 </div>
@@ -12014,9 +12065,76 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Future-Directions">Future Directions<a class="anchor-link" href="#Future-Directions">&#182;</a></h1><ul>
+<h1 id="Future-Directions-(For-resolution-choice)">Future Directions (For resolution choice)<a class="anchor-link" href="#Future-Directions-(For-resolution-choice)">&#182;</a></h1><ul>
 <li>Need more analysis for analysing choosing the optimal resolutoion.</li>
 <li>Can we identify metrics for spatial correlation which usefully summarize the large amount of data?</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Results-2:-Understanding-Correlations-between-different-properties">Results 2: Understanding Correlations between different properties<a class="anchor-link" href="#Results-2:-Understanding-Correlations-between-different-properties">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="images/three.png"></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="images/one.png"></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="images/two.png"></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="images/four.png"></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="images/five.png"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Conclusions">Conclusions<a class="anchor-link" href="#Conclusions">&#182;</a></h1><ul>
+<li><p>We can divide a region using superpixels</p>
+</li>
+<li><p>Different regions show different levels of variability, however, we find no evidence so far that particular regions are more or less variable</p>
+</li>
 </ul>
 
 </div>
