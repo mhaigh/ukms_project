@@ -20,3 +20,7 @@ This notebook is used to spatially decompose the UK into superpixel segments. Th
 - visualisedata.ipynb
 
 The role of this notebook is to look at variances of certain physical properties (e.g. air temperature, pressurre...) and how these depend on the superpixel segmentation. We concentrate on the number of segments in the decomposition.
+
+- Mogreps_Presentation.ipynb
+
+Here methods and results are collated into a presentation-style notebook. 
