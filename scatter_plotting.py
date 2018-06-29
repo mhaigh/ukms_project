@@ -63,7 +63,7 @@ def corr(lists,var_names):
 	"""
 
 	Nv, Np, Ns = np.shape(lists)
-	print(Nv)
+
 	# Find correlation coefficients.
 	corr = np.zeros((Np,Np))
 	for row in range(Np):
